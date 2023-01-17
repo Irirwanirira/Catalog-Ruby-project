@@ -26,7 +26,7 @@ def match_input(selection)
     @console.music
   when 2
     puts 'Thank you for the visit!!'
-    save_data
+    # save_data
     exit!
   else
     puts 'Not a valid selection'

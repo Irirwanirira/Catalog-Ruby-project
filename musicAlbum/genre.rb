@@ -2,13 +2,14 @@ require_relative './music_album'
 
 class Genre
     attr_accessor :items, :name
-    def initialize
+
+    def initialize(name)
         @id = Random.rand(1..1000)
         @name = name
-        @item = []
+        @items = []
     end
 
-    def add_items(item)
+    def add_item(item)
         @items.push(item)
         item.genre = self
     end

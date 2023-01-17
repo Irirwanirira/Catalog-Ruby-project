@@ -13,7 +13,7 @@ initialize_file
 
 def save_musics(music)
   song = []
-  musics.each do |music|
+  music.each do |music|
     song.push(
       on_spotify: music.on_spotify,
       publish_date: music.publish_date,
@@ -37,7 +37,7 @@ def read_music
   musics = []
   all_musics = File.read('./musicAlbum/data/musics.json')
   JSON.parse(all_musics).each do |music|
-    new_music = Music_album.new(music['on_spotify'], music['publish_date'])
+    new_music = MusicAlbum.new(music['on_spotify'], music['publish_date'])
     new_genre = Genre.new(music['genre'])
     new_author = Author.new(music['music_author_first_name'], music['music_author_second_name'])
     new_music.genre = new_genre
