@@ -13,7 +13,7 @@ initialize_file
 
 def save_musics(music)
   song = []
-  music.each do |music|
+  musics.each do |music|
     song.push(
       on_spotify: music.on_spotify,
       publish_date: music.publish_date,

@@ -20,7 +20,7 @@ class Item
     @archived = true if can_be_archived?
   end
 
-  def genre(genre)
+  def genre=(genre)
     @genre = genre
     genre.items.push(self) unless genre.items.include?(self)
   end

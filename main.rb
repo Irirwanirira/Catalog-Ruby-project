@@ -6,7 +6,7 @@ require_relative './app'
 
 def our_recipe
   puts ''
-  print 'Welcome in our studio, free to grab your dessert:'
+  print 'Welcome to our studio, free to grab your dessert:'
   puts ''
   puts '
   1. Music
@@ -24,7 +24,7 @@ def match_input(selection)
   case selection
   when 1
     @console.music
-  when 2
+  when 4
     puts 'Thank you for the visit!!'
     # save_data
     exit!
