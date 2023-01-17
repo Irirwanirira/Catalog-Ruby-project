@@ -4,9 +4,10 @@ require_relative './genre'
 require 'json'
 
 class MusicHandler
-  attr_accessor :music
+  attr_accessor :music, :genre
   def initialize
     @musics = music
+    @genre = genre
   end
 
   def listern_all_music
@@ -33,16 +34,17 @@ class MusicHandler
 
   def add_musics
     puts 'let\'s create some music!'
-    print 'Date of publication'
+    print 'Date of publication '
     date_of_publication = gets.chomp
-    print 'is the music on Spotify? (yes/no)'
+    print 'is the music on Spotify? (yes/no) '
     is_on_spotify = gets.chomp
     spotify_state = check_spotify_state(is_on_spotify)
-    print 'what\'s the music genre'
+    print 'what\'s the music genre '
+    music_genre = gets.chomp
     genre = Genre.new(music_genre)
-    print 'Author\'s firts name:'
+    print 'Author\'s firts name: '
     music_author_first_name = gets.chomp
-    print 'Author\'s second name:'
+    print 'Author\'s second name: '
     music_author_second_name = gets.chomp
     author = Author.new(music_author_first_name, music_author_second_name)
     music_select = Music_album.new(spotify_state, date_of_publication)

@@ -10,7 +10,9 @@ def our_recipe
   puts ''
   puts '
   1. Music
-  5.Exit
+  2. Book
+  3. Movies
+  4.Exit
   Choose (1-4)'
 end
 
@@ -34,10 +36,9 @@ end
 def main(status)
   loop do
     break unless status
-    
+    our_recipe    
     user_input = user_choice
     match_input(user_input)
-    our_recipe
   end
 end
 

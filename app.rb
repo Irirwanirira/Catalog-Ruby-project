@@ -8,13 +8,12 @@ class App
   end
 
   def music
-    print 'Please select one of the task among the following
-        1.  List all music Music_album
+    puts 'Please select one of the task among the following
+        1. List all music in the Album
         2. List all genres
-        3. Add a music Music_album
-        : '
+        3. Add a music to the Album'
 
-    selection = gets.chomp.to.i
+    selection = gets.chomp.to_i
 
     case selection
     when 1
