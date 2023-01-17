@@ -10,4 +10,7 @@ class Item
         @published_date>10
     end
 
+    def add_author(author)
+        @author = author
+    end
 end

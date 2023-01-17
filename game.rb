@@ -15,3 +15,5 @@ class Game < Item
 end
 
 game = Game.new(true, 3)
+
+p game.can_be_archived
