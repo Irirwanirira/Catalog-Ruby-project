@@ -12,13 +12,13 @@ def preserve_data(file_name, data_arr)
       label_id: obj.label.id, title: obj.label.title, color: obj.label.color
     }
     case obj.type
-    when 'Book'
-      new_hash.merge!({
-        publisher: obj.publisher, cover_state: obj.cover_state,
-        author_id: obj.author.id, fname: obj.author.first_name, lname: obj.author.last_name
-      })
-    when 'Game' then new_hash.merge!({ activity: obj.last_played_at, multiplayer: obj.multiplayer })
-    when 'Album' then new_hash.merge!({ on_spotify: obj.on_spotify, genre_id: obj.genre.id, genre: obj.genre.name })
+      when 'Book'
+        new_hash.merge!({
+          publisher: obj.publisher, cover_state: obj.cover_state,
+          author_id: obj.author.id, fname: obj.author.first_name, lname: obj.author.last_name
+        })
+      when 'Game' then new_hash.merge!({ activity: obj.last_played_at, multiplayer: obj.multiplayer })
+      when 'Album' then new_hash.merge!({ on_spotify: obj.on_spotify, genre_id: obj.genre.id, genre: obj.genre.name })
     end
     write_data << new_hash
   end
