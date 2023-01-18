@@ -1,4 +1,7 @@
+require 'date'
+
 class Item
+    
     attr_reader :author
     def initialize(author, archived, published_date)
         @id = Random.rand(1..1000)
@@ -8,7 +11,8 @@ class Item
     end
 
     def can_be_archived
-        @published_date>10
+        diff = Date.today - Date.parse(@published_date)
+        diff.to_i > 3652
     end
 
     def add_author(author)

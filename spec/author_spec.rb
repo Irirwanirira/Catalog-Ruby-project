@@ -4,7 +4,7 @@ require_relative '../item.rb'
 describe Author do
     before(:all) do
         @author = Author.new("Sajeel", "Zafar")
-        @item1 = Item.new("Sajeel", true, 8)
+        @item1 = Item.new("Sajeel", true, "03/01/2010")
     end
 
     it "Should add one item to the respective author" do
