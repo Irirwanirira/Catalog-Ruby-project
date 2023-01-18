@@ -24,3 +24,14 @@ def savegame_json(games)
   end
   File.write('./gameStorage/games.json', JSON.pretty_generate(gameslist).to_s)
 end
+
+def saveauthor_json(authors)
+  authorlist = []
+  authors.each do |author|
+    authorlist.push(
+      author_first: author.first_name,
+      author_last: author.last_name
+    )
+  end
+  File.write('./gameStorage/authors.json', JSON.pretty_generate(authorlist).to_s)
+end

@@ -53,6 +53,7 @@ class App
     @listofgames.push(newgame)
     @listofauthors.push(newauthor)
     savegame_json(@listofgames)
+    saveauthor_json(@listofauthors)
   end
 
   def launch
