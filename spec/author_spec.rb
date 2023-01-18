@@ -3,8 +3,8 @@ require_relative '../item.rb'
 
 describe Author do
     before(:all) do
-        @author = Author.new(1, "Sajeel", "Zafar")
-        @item1 = Item.new(1, "Sajeel", true, 8)
+        @author = Author.new("Sajeel", "Zafar")
+        @item1 = Item.new("Sajeel", true, 8)
     end
 
     it "Should add one item to the respective author" do
