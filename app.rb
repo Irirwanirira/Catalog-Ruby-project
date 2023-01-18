@@ -4,7 +4,7 @@ require_relative './author'
 require_relative './json_read_write'
 
 class App
-  attr_reader :listofgames
+  attr_accessor :listofgames, :listofauthors
 
   def initialize
     @appmsg = "Welcome to the Game Section
@@ -15,8 +15,8 @@ class App
         4. Back to main menu
 
         Please select any one option: "
-    @listofgames = []
-    @listofauthors = []
+    @listofgames = read_games
+    @listofauthors = read_authors
   end
 
   def list_games
