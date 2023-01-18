@@ -3,7 +3,7 @@ class Item
 
   def initialize(publish_date)
     @id = Random.rand(1..1000)
-    @genre = ""
+    @genre = nil
     @author = nil
     @publish_date = publish_date
     @archived = false

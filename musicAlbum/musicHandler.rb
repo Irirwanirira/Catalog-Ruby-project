@@ -12,7 +12,7 @@ class MusicHandler
 
   def list_all_genre
     if @musics.length.zero?
-     puts 'Music genre is empty, we are sorry!'
+      puts 'Music genre is empty, we are sorry!'
     else
       specific_genre = @musics.uniq { |sort| sort.genre.name }
       specific_genre.each_with_index do |type, index|
@@ -32,15 +32,16 @@ class MusicHandler
     music_genre = gets.chomp
     genre = Genre.new(music_genre)
     print 'Author\'s first name: '
-    music_author_first_name = gets.chomp
+    author_first_name = gets.chomp
     print 'Author\'s second name: '
-    music_author_second_name = gets.chomp
-    author = Author.new(music_author_first_name, music_author_second_name)
+    author_second_name = gets.chomp
+    author = Author.new(author_first_name, author_second_name)
     music_select = MusicAlbum.new(spotify_state, date_of_publication)
     music_select.genre = genre
     music_select.author = author
     @musics << music_select
     save_musics(@musics)
+    save_genres(@musics)
     puts 'Music created successfully!'
   end
 
@@ -49,7 +50,7 @@ class MusicHandler
       puts 'PLaylist is empty. Add music to play!'
     else
       @musics.each_with_index do |song, index|
-        print "#{index})  Publish date: #{song.publish_date}, On spotify?: #{song.on_spotify}, genre: #{song.genre.name}, "
+        print " #{index})  Publish date: #{song.publish_date}, On spotify?: #{song.on_spotify}, genre: #{song.genre.name}, "
         print "Author: #{song.author.first_name} #{song.author.last_name}"
       end
    end

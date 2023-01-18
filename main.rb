@@ -26,8 +26,6 @@ def match_input(selection)
     @console.music
   when 4
     puts 'Thank you for the visit!!'
-    save_musics
-    save_genres
     exit!
   else
     puts 'Not a valid selection'
@@ -37,7 +35,7 @@ end
 def main(status)
   loop do
     break unless status
-    our_recipe    
+    our_recipe
     user_input = user_choice
     match_input(user_input)
   end
