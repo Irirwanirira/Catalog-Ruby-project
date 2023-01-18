@@ -1,6 +1,6 @@
 require_relative './app'
-# require_relative './read_music'
-# require_relative './save_musics'
+require_relative './musicAlbum/music_data'
+
 @console = App.new
 read_musics
 
@@ -27,6 +27,7 @@ def match_input(selection)
   when 4
     puts 'Thank you for the visit!!'
     save_musics
+    save_genres
     exit!
   else
     puts 'Not a valid selection'

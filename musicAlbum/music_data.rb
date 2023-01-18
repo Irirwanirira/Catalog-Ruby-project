@@ -1,5 +1,6 @@
 require_relative './musicHandler'
 require_relative './genre'
+require_relative './author'
 require 'json'
 
 def initialize_file
@@ -11,15 +12,15 @@ end
 
 initialize_file
 
-def save_musics(music)
+def save_musics(musics)
   list = []
   musics.each do |music|
     list.push({
-      on_spotify: music.on_spotify,
       publish_date: music.publish_date,
+      on_spotify: music.on_spotify,
       Genre: music.genre.name,
-      music_author_first_name: author.first_name,
-      music_author_second_name: author.last_name
+      Author_first_name: music.author.first_name,
+      Author_second_name: music.author.last_name
     })
   end
   File.write('./musicAlbum/data/musics.json', JSON.generate(list).to_s)
@@ -41,7 +42,7 @@ def read_musics
     new_genre = Genre.new(music['genre'])
     new_author = Author.new(music['music_author_first_name'], music['music_author_second_name'])
     new_music.genre = new_genre
-    new_music.author(new_author)
+    new_music.author = new_author
     musics.push(new_music)
   end
   musics
