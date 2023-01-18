@@ -1,6 +1,7 @@
 require_relative './item'
 require_relative './game'
 require_relative './author'
+require_relative './json_read_write'
 
 class App
   attr_reader :listofgames
@@ -46,10 +47,12 @@ class App
     archived = gets.chomp
     print 'Published date of the game (DD/MM/YYYY): '
     date = gets.chomp
+    print "\n Game Created Successfully \n"
     newauthor = Author.new(author_first, author_last)
     newgame = Game.new(multiplayer, last_played_at, newauthor, archived, date)
     @listofgames.push(newgame)
     @listofauthors.push(newauthor)
+    savegame_json(@listofgames)
   end
 
   def launch
@@ -65,9 +68,11 @@ class App
     when '3'
       create_game
       launch
-
     when '4'
       puts "Returning \n\n"
+    else
+      puts "Please select the correct option \n"
+      launch
     end
   end
 end
