@@ -1,4 +1,4 @@
-require_relative './musicHandler'
+require_relative './music_handler'
 require_relative './genre'
 require_relative './author'
 require 'json'
@@ -29,7 +29,7 @@ end
 def save_genres(genres)
   types = []
   genres.each do |genre|
-    types.push(names: genre)
+    types.push(genre: genre)
   end
   File.write('./musicAlbum/data/genre.json', JSON.generate(types))
 end

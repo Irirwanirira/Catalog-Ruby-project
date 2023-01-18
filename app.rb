@@ -1,4 +1,4 @@
-require_relative './musicAlbum/musicHandler'
+require_relative './musicAlbum/music_handler'
 
 class App
   attr_accessor :music_handler

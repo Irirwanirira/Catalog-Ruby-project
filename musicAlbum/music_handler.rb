@@ -50,10 +50,11 @@ class MusicHandler
       puts 'PLaylist is empty. Add music to play!'
     else
       @musics.each_with_index do |song, index|
-        print " #{index})  Publish date: #{song.publish_date}, On spotify?: #{song.on_spotify}, genre: #{song.genre.name}, "
+        print " #{index})  Publish date: #{song.publish_date},
+        On spotify?: #{song.on_spotify}, genre: #{song.genre.name}, "
         print "Author: #{song.author.first_name} #{song.author.last_name}"
       end
-   end
+    end
   end
 
   def check_spotify_state(state)
