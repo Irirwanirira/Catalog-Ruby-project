@@ -10,7 +10,7 @@ class Game < Item
         @last_played_at = last_played_at
         super(author, archived, published_date)
     end
-    attr_reader :last_played_at
+    attr_reader :last_played_at, :multiplayer, :archived, :published_date
 
     def can_be_archived
         diff = Date.today - Date.parse(@last_played_at)

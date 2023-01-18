@@ -15,17 +15,3 @@ class Author
         item.add_author(self)
     end
 end
-
-# author = Author.new(1, "Sajeel", "Zafar")
-# item1 = Item.new(1, "Sharjeel", true, 8)
-# item2 = Item.new(1, "Raheel", true, 18)
-
-# author.add_item(item1)
-# author.add_item(item2)
-
-# p author.items
-# author.items.each do |item|
-#     if item.author.first_name == "Sajeel"
-#       puts "Good work"
-#     end
-# end
