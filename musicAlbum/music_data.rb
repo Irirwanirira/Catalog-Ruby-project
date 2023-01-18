@@ -12,28 +12,28 @@ end
 initialize_file
 
 def save_musics(music)
-  song = []
+  list = []
   musics.each do |music|
-    song.push(
+    list.push({
       on_spotify: music.on_spotify,
       publish_date: music.publish_date,
       Genre: music.genre.name,
       music_author_first_name: author.first_name,
       music_author_second_name: author.last_name
-    )
+    })
   end
-  File.write('./musicAlbum/data/musics.json', JSON.generate(song).to_s)
+  File.write('./musicAlbum/data/musics.json', JSON.generate(list).to_s)
 end
 
 def save_genres(genres)
   types = []
   genres.each do |genre|
-    types.push(name: genre.name)
+    types.push({name: genre.name})
   end
-  File.write('./musicAlbum/data/musics.json', JSON.generate(types).to_s)
+  File.write('./musicAlbum/data/genres.json', JSON.generate(types).to_s)
 end
 
-def read_music
+def read_musics
   musics = []
   all_musics = File.read('./musicAlbum/data/musics.json')
   JSON.parse(all_musics).each do |music|
@@ -41,7 +41,7 @@ def read_music
     new_genre = Genre.new(music['genre'])
     new_author = Author.new(music['music_author_first_name'], music['music_author_second_name'])
     new_music.genre = new_genre
-    new_music.add_author(new_author)
+    new_music.author(new_author)
     musics.push(new_music)
   end
   musics

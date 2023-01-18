@@ -1,8 +1,8 @@
 require_relative './app'
-# require_relative './read_data'
-# require_relative './save_data'
+# require_relative './read_music'
+# require_relative './save_musics'
 @console = App.new
-# read_data
+read_musics
 
 def our_recipe
   puts ''
@@ -26,7 +26,7 @@ def match_input(selection)
     @console.music
   when 4
     puts 'Thank you for the visit!!'
-    # save_data
+    save_musics
     exit!
   else
     puts 'Not a valid selection'

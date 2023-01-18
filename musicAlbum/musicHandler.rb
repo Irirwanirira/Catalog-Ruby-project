@@ -7,7 +7,7 @@ require 'json'
 class MusicHandler
   attr_accessor :music
   def initialize
-    @musics = read_music
+    @musics = read_musics
   end
 
   def list_all_genre
@@ -40,9 +40,8 @@ class MusicHandler
     music_select.genre = genre
     music_select.author = author
     @musics << music_select
-    # save_musics(@musics)
+    save_musics(@musics)
     puts 'Music created successfully!'
-    listern_all_music
   end
 
   def listern_all_music
