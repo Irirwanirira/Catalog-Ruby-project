@@ -27,8 +27,6 @@ class App
     puts ''
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
-  # rubocop:disable Metrics/MethodLength
   def select_input
     options
 
@@ -51,8 +49,6 @@ class App
       select_input
     end
   end
-  # rubocop:enable Metrics/MethodLength
-  # rubocop:enable Metrics/CyclomaticComplexity
 
   def add_rel(item)
     @labels << item.label
