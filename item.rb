@@ -1,21 +1,21 @@
 require 'date'
 
 class Item
-    
-    attr_reader :author
-    def initialize(author, archived, published_date)
-        @id = Random.rand(1..1000)
-        @author = author
-        @archived = archived
-        @published_date = published_date
-    end
+  attr_reader :author
 
-    def can_be_archived
-        diff = Date.today - Date.parse(@published_date)
-        diff.to_i > 3652
-    end
+  def initialize(author, archived, published_date)
+    @id = Random.rand(1..1000)
+    @author = author
+    @archived = archived
+    @published_date = published_date
+  end
 
-    def add_author(author)
-        @author = author
-    end
+  def can_be_archived
+    diff = Date.today - Date.parse(@published_date)
+    diff.to_i > 3652
+  end
+
+  def add_author(author)
+    @author = author
+  end
 end
