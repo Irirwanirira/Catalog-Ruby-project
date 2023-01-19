@@ -34,7 +34,7 @@ end
 def main
   msg = "Welcome to the App
 
-    1. Movies
+    1. Musics
     2. Books
     3. Games
     4. Exiting \n\n"

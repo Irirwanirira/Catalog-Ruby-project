@@ -42,7 +42,7 @@ class MusicHandler
     author = Author.new(author_first_name, author_second_name)
     music_select = MusicAlbum.new(spotify_state, author, label, date_of_publication)
     music_select.genre = genre
-    music_select.author = author
+    # music_select.author = author
     @musics << music_select
     save_musics(@musics)
     save_genres(@musics)
