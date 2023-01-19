@@ -52,6 +52,7 @@ class App
     saveauthor_json(@listofauthors)
   end
 
+  # rubocop:disable Metrics/MethodLength
   def create_book
     print 'Publisher : '
     book_publisher = gets.chomp
@@ -145,4 +146,5 @@ class App
       launch_games
     end
   end
+  # rubocop:enable Metrics/MethodLength
 end
