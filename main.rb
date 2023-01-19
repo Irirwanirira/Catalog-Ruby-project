@@ -39,7 +39,6 @@ def main
     3. Games
     4. Exiting \n\n"
 
-
   app = App.new
   Main.new(msg, app).launch
 end
