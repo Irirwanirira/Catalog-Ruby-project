@@ -1,6 +1,5 @@
 require_relative '../item/rel/author'
 require_relative '../item/rel/label'
-require_relative '../item/rel/genre'
 require_relative '../item/book'
 require_relative '../item/item'
 
@@ -19,11 +18,6 @@ def create(item)
     last_name = gets.chomp
     new_author = Author.new(first_name, last_name)
     new_author.add_item(item)
-  elsif item.instance_of?(Album)
-    print 'Genre : '
-    game_genre = gets.chomp
-    new_genre = Genre.new(game_genre)
-    new_genre.add_item(item)
   end
   puts ''
 end
