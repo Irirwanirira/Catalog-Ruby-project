@@ -1,0 +1,29 @@
+[
+  {
+    "publisher": "Sajeel",
+    "cover_state": "Great",
+    "author_first": "Xiao",
+    "author_last": "Xing",
+    "label_title": "The Great Mathematician",
+    "label_color": "Black",
+    "published_date": "10/10/1990"
+  },
+  {
+    "publisher": "Doggar",
+    "cover_state": "Fine",
+    "author_first": "Doglar",
+    "author_last": "Publication",
+    "label_title": "SAT",
+    "label_color": "Blue",
+    "published_date": "10/12/2011"
+  },
+  {
+    "publisher": "Dummy",
+    "cover_state": "Good",
+    "author_first": "Dummy",
+    "author_last": "Dummy",
+    "label_title": "Checking",
+    "label_color": "White",
+    "published_date": "10/10/2011"
+  }
+]

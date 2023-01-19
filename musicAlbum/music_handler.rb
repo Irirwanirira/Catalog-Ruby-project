@@ -16,7 +16,7 @@ class MusicHandler
     else
       specific_genre = @musics.uniq { |sort| sort.genre.name }
       specific_genre.each_with_index do |type, index|
-        puts "#{index + 1}) #{type.genre.name}"
+        puts "#{index + 1}) #{type.genre.name}\n"
       end
     end
   end
@@ -35,14 +35,16 @@ class MusicHandler
     author_first_name = gets.chomp
     print 'Author\'s second name: '
     author_second_name = gets.chomp
+    print 'Music\'s label: '
+    label = gets.chomp
     author = Author.new(author_first_name, author_second_name)
-    music_select = MusicAlbum.new(spotify_state, date_of_publication)
+    music_select = MusicAlbum.new(spotify_state,author, label, date_of_publication)
     music_select.genre = genre
     music_select.author = author
     @musics << music_select
     save_musics(@musics)
     save_genres(@musics)
-    puts 'Music created successfully!'
+    puts "\n Music created successfully!\n\n"
   end
 
   def listern_all_music
@@ -50,9 +52,9 @@ class MusicHandler
       puts 'PLaylist is empty. Add music to play!'
     else
       @musics.each_with_index do |song, index|
-        print " #{index})  Publish date: #{song.publish_date},
+        print " #{index + 1})  Publish date: #{song.publish_date},
         On spotify?: #{song.on_spotify}, genre: #{song.genre.name}, "
-        print "Author: #{song.author.first_name} #{song.author.last_name}"
+        print "Author: #{song.author.first_name} #{song.author.last_name}\n"
       end
     end
   end

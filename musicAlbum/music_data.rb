@@ -16,11 +16,9 @@ def read_musics
   musics = []
   all_musics = File.read('./musicAlbum/data/musics.json')
   JSON.parse(all_musics).each do |music|
-    new_music = MusicAlbum.new(music['on_spotify'], music['publish_date'])
+    new_music = MusicAlbum.new(music['on_spotify'],music['Author_first_name'], music['label'], music['publish_date'])
     new_genre = Genre.new(music['genre'])
-    new_author = Author.new(music['Author_first_name'], music['Author_second_name '])
     new_music.genre = new_genre
-    new_music.author = new_author
     musics.push(new_music)
   end
   musics
@@ -33,6 +31,7 @@ def save_musics(musics)
       publish_date: music.publish_date,
       on_spotify: music.on_spotify,
       genre: music.genre.name,
+      label: music.label,
       Author_first_name: music.author.first_name,
       Author_second_name: music.author.last_name
     )
