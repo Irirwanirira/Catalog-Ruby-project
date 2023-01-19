@@ -4,7 +4,6 @@ require 'date'
 class Game < Item
   alias parent_can_be_archived can_be_archived
 
-
   def initialize(multiplayer, last_played_at, author, archived, published_date)
     @multiplayer = multiplayer
     @last_played_at = last_played_at
