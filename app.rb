@@ -17,11 +17,9 @@ class App
   def options
     puts "
     1 - List all book
-    2 - List all genres
-    3 - List all labels
-    4 - List all authors
-    5 - Add a book
-    6 - Exit
+    2 - List all labels
+    3 - Add a book
+    4 - Exit
     "
     puts 'Select an option'
     puts ''
@@ -34,14 +32,12 @@ class App
 
     case user_input
     when 1 then list_books
-    when 2 then show_genres
-    when 3 then list_labels
-    when 4 then list_authors
-    when 5 then create_book
-    when 6
+    when 2 then list_labels
+    when 3 then create_book
+    when 4
       json_write
       puts ''
-      puts 'Goodbye'
+      puts 'Goodbye, thanks for using our app!'
       puts ''
       exit
     else
