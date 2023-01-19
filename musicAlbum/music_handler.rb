@@ -6,12 +6,13 @@ require 'json'
 
 class MusicHandler
   attr_accessor :music
+
   def initialize
     @musics = read_musics
   end
 
   def list_all_genre
-    if @musics.length.zero?
+    if @musics.empty?
       puts 'Music genre is empty, we are sorry!'
     else
       specific_genre = @musics.uniq { |sort| sort.genre.name }
@@ -21,6 +22,7 @@ class MusicHandler
     end
   end
 
+  # rubocop:disable Metrics/MethodLength
   def add_musics
     puts 'let\'s create some music!'
     print 'Date of publication: '
@@ -38,7 +40,7 @@ class MusicHandler
     print 'Music\'s label: '
     label = gets.chomp
     author = Author.new(author_first_name, author_second_name)
-    music_select = MusicAlbum.new(spotify_state,author, label, date_of_publication)
+    music_select = MusicAlbum.new(spotify_state, author, label, date_of_publication)
     music_select.genre = genre
     music_select.author = author
     @musics << music_select
@@ -48,7 +50,7 @@ class MusicHandler
   end
 
   def listern_all_music
-    if @musics.length.zero?
+    if @musics.empty?
       puts 'PLaylist is empty. Add music to play!'
     else
       @musics.each_with_index do |song, index|
@@ -73,4 +75,5 @@ class MusicHandler
       check_spotify_state(state)
     end
   end
+  # rubocop:enable Metrics/MethodLength
 end

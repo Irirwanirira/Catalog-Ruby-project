@@ -13,26 +13,20 @@ class Main
     option = gets.chomp
     case option
     when '1'
-      read_musics
       @app.music
       launch
-      
     when '2'
       @app.launch_books
       launch
-
     when '3'
       @app.launch_games
       launch
-
     when '4'
       puts 'Exiting...'
       exit
-
     else
       puts "Please select the correct option \n"
       launch
-
     end
   end
 end

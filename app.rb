@@ -94,14 +94,11 @@ class App
   end
 
   def music
-    puts 'Please select one of the task among the following
-        1. List all music in the Album
-        2. List all genres
-        3. Add a music to the Album
-        4. Press 4 to return to the menu'
+    read_musics
 
+    puts "Please select one of the task among the following\n1. List all music in the Album
+2. List all genres\n3. Add a music to the Album\n4. Press 4 to return to the menu"
     selection = gets.chomp.to_i
-
     case selection
     when 1
       @music_handler.listern_all_music
