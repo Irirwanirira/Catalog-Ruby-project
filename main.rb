@@ -11,7 +11,7 @@ def our_recipe
   puts '
   1. Music
   2. Book
-  3. Movies
+  3. Games
   4.Exit
   Choose (1-4)'
 end
