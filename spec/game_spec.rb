@@ -1,11 +1,11 @@
-require_relative '../game'
+require_relative '../game/game'
 require_relative '../item'
 
 describe Game do
   before(:all) do
-    @game1 = Game.new(true, '03/01/2022', 'Sharjeel', true, '03/01/2010')
-    @game2 = Game.new(true, '03/01/2020', 'Zafar', true, '03/01/2010')
-    @game3 = Game.new(true, '03/01/2020', 'Sajeel', true, '03/01/2022')
+    @game1 = Game.new(true, '03/01/2022', 'Sharjeel', 'Gift', '03/01/2010')
+    @game2 = Game.new(true, '03/01/2020', 'Zafar', 'Gift', '03/01/2010')
+    @game3 = Game.new(true, '03/01/2020', 'Sajeel', 'Gift', '03/01/2022')
   end
 
   it 'Should be true when published date of item is older than 10 years and last played is greater than 2 years' do

@@ -1,1 +1,0 @@
-# Catalog-Ruby-project

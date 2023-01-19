@@ -11,8 +11,12 @@ class Main
     print 'Please select any one option: '
     option = gets.chomp
     case option
+    when '2'
+      @app.launch_books
+      launch
+
     when '3'
-      @app.launch
+      @app.launch_games
       launch
 
     when '4'

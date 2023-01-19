@@ -1,22 +1,18 @@
 require_relative './item'
-require_relative './game'
-require_relative './author'
+require_relative './game/game'
+require_relative './game/author'
 require_relative './json_read_write'
+require_relative './book/book'
+require_relative './book/label'
 
 class App
   attr_accessor :listofgames, :listofauthors
 
   def initialize
-    @appmsg = "Welcome to the Game Section
-
-        1. List of Games
-        2. List of Authors
-        3. Add a game
-        4. Back to main menu
-
-        Please select any one option: "
     @listofgames = read_games
     @listofauthors = read_authors
+    @listofbooks = read_books
+    @listoflabels = read_labels
   end
 
   def list_games
@@ -43,37 +39,110 @@ class App
     author_first = gets.chomp
     print "Game's author last name: "
     author_last = gets.chomp
-    print 'Is this game archived (Y/N): '
-    archived = gets.chomp
+    print 'Title : '
+    label_title = gets.chomp
     print 'Published date of the game (DD/MM/YYYY): '
     date = gets.chomp
     print "\n Game Created Successfully \n"
     newauthor = Author.new(author_first, author_last)
-    newgame = Game.new(multiplayer, last_played_at, newauthor, archived, date)
+    newgame = Game.new(multiplayer, last_played_at, newauthor, label_title, date)
     @listofgames.push(newgame)
     @listofauthors.push(newauthor)
     savegame_json(@listofgames)
     saveauthor_json(@listofauthors)
   end
 
-  def launch
-    puts @appmsg
+  def create_book
+    print 'Publisher : '
+    book_publisher = gets.chomp
+    print 'Cover State : '
+    book_cover_state = gets.chomp
+    print "Book's author first name: "
+    author_first = gets.chomp
+    print "Book's author last name: "
+    author_last = gets.chomp
+    print 'Title : '
+    label_title = gets.chomp
+    print 'Published date of the game (DD/MM/YYYY): '
+    date = gets.chomp
+    print 'Color : '
+    color = gets.chomp
+    new_label = Label.new(label_title, color)
+    author = Author.new(author_first, author_last)
+    mybook = Book.new(book_publisher, book_cover_state, author, new_label, date)
+    print "\n Book Created Successfully \n"
+    @listofbooks.push(mybook)
+    @listoflabels.push(new_label)
+    savebooks_json(@listofbooks)
+    savelabels_json(@listoflabels)
+  end
+
+  def list_books
+    @listofbooks.each_with_index do |book, index|
+      puts "#{index + 1}: Publisher: #{book.publisher}, Label: #{book.cover_state},
+      Publication Date: #{book.published_date}\n\n"
+    end
+  end
+
+  def list_labels
+    @listoflabels.each_with_index do |label, index|
+      puts "#{index + 1}: #{label.title}, #{label.color}\n\n"
+    end
+  end
+
+  def launch_books
+    puts "Welcome to the Books Section
+
+        1. List of Books
+        2. List of Labels
+        3. Add a Book
+        4. Back to main menu
+
+        Please select any one option: "
     input = gets.chomp
     case input
     when '1'
-      list_games
-      launch
+      list_books
+      launch_books
     when '2'
-      list_authors
-      launch
+      list_labels
+      launch_books
     when '3'
-      create_game
-      launch
+      create_book
+      launch_books
     when '4'
       puts "Returning \n\n"
     else
       puts "Please select the correct option \n"
-      launch
+      launch_books
+    end
+  end
+
+  def launch_games
+    puts "Welcome to the Game Section
+
+        1. List of Games
+        2. List of Authors
+        3. Add a game
+        4. Back to main menu
+
+        Please select any one option: "
+    input = gets.chomp
+    case input
+    when '1'
+      list_games
+      launch_games
+    when '2'
+      list_authors
+      launch_games
+    when '3'
+      create_game
+      launch_games
+    when '4'
+      puts "Returning \n\n"
+    else
+      puts "Please select the correct option \n"
+      launch_games
     end
   end
 end

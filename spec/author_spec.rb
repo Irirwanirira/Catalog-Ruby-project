@@ -1,10 +1,10 @@
-require_relative '../author'
+require_relative '../game/author'
 require_relative '../item'
 
 describe Author do
   before(:all) do
     @author = Author.new('Sajeel', 'Zafar')
-    @item1 = Item.new('Sajeel', true, '03/01/2010')
+    @item1 = Item.new('Sajeel', 'Gift', '03/01/2010')
   end
 
   it 'Should add one item to the respective author' do
