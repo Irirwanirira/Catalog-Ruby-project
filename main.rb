@@ -1,4 +1,5 @@
 require_relative './app'
+require_relative './musicAlbum/music_data'
 
 class Main
   def initialize(message, app)
@@ -11,22 +12,21 @@ class Main
     print 'Please select any one option: '
     option = gets.chomp
     case option
+    when '1'
+      @app.music
+      launch
     when '2'
       @app.launch_books
       launch
-
     when '3'
       @app.launch_games
       launch
-
     when '4'
       puts 'Exiting...'
       exit
-
     else
       puts "Please select the correct option \n"
       launch
-
     end
   end
 end
@@ -34,7 +34,7 @@ end
 def main
   msg = "Welcome to the App
 
-    1. Movies
+    1. Musics
     2. Books
     3. Games
     4. Exiting \n\n"

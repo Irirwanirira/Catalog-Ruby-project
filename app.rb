@@ -1,3 +1,4 @@
+require_relative './musicAlbum/music_handler'
 require_relative './item'
 require_relative './game/game'
 require_relative './game/author'
@@ -6,13 +7,14 @@ require_relative './book/book'
 require_relative './book/label'
 
 class App
-  attr_accessor :listofgames, :listofauthors
+  attr_accessor :listofgames, :listofauthors, :music_handler
 
   def initialize
     @listofgames = read_games
     @listofauthors = read_authors
     @listofbooks = read_books
     @listoflabels = read_labels
+    @music_handler = MusicHandler.new
   end
 
   def list_games
@@ -88,6 +90,30 @@ class App
   def list_labels
     @listoflabels.each_with_index do |label, index|
       puts "#{index + 1}: #{label.title}, #{label.color}\n\n"
+    end
+  end
+
+  def music
+    read_musics
+
+    puts "Please select one of the task among the following\n1. List all music in the Album
+2. List all genres\n3. Add a music to the Album\n4. Press 4 to return to the menu"
+    selection = gets.chomp.to_i
+    case selection
+    when 1
+      @music_handler.listern_all_music
+      music
+    when 2
+      @music_handler.list_all_genre
+      music
+    when 3
+      @music_handler.add_musics
+      music
+    when 4
+      puts 'Returning to the main menu'
+    else
+      puts 'Invalid selection, PLease try again'
+      music
     end
   end
 
