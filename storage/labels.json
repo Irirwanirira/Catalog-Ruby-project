@@ -10,5 +10,9 @@
   {
     "label_title": "Checking",
     "label_color": "White"
+  },
+  {
+    "label_title": "test",
+    "label_color": "blue"
   }
 ]
