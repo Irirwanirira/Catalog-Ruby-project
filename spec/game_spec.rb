@@ -19,4 +19,12 @@ describe Game do
   it 'Should be false when published date of item is less than 10 years but last played is greater than 2 years' do
     expect(@game3.can_be_archived).to eql(false)
   end
+
+  it 'Should have multiplayer to be true' do
+    expect(@game1.multiplayer).to eql(true)
+  end
+
+  it 'Should have last played at to be 03/01/2020' do
+    expect(@game3.last_played_at).to eql('03/01/2020')
+  end
 end

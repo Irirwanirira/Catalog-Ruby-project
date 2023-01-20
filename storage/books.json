@@ -25,5 +25,14 @@
     "label_title": "Checking",
     "label_color": "White",
     "published_date": "10/10/2011"
+  },
+  {
+    "publisher": "samuel",
+    "cover_state": "test",
+    "author_first": "samuel",
+    "author_last": "moiwa",
+    "label_title": "test",
+    "label_color": "blue",
+    "published_date": "01/01/2023"
   }
 ]

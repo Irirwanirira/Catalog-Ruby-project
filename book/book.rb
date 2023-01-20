@@ -13,9 +13,7 @@ class Book < Item
   end
 
   def can_be_archived
-    age = Time.now.year - Date.parse(date).year
-    age > 10 || @cover_state == 'bad'
+    age = Date.today - Date.parse(@published_date)
+    age > 3652 || @cover_state == 'bad'
   end
-
-  private :can_be_archived
 end
