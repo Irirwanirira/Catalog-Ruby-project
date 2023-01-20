@@ -25,5 +25,4 @@ describe Book do
   it 'should return false if parents method returns false AND if cover_state not equals to bad' do
     expect(@book2.can_be_archived).to eql(false)
   end
-
 end
