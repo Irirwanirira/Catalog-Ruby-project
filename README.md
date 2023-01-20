@@ -4,9 +4,7 @@
 <div align="center">
 
   <h3><b>CATALOGUE OF THINGS</b></h3>
-    <a href="https://drive.google.com/file/d/10y3xExClyVJTA6OU4jws-bmI-w9KU-Kx/view?usp=share_link"> Live Demo </a>
-
-
+   
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -39,20 +37,29 @@ Depending on wether he want either music, book, or game... he gets different sel
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Ruby
+<ul>
+  <li><a href="https://www.ruby-lang.org/en/news/2022/11/24/ruby-3-1-3-released/">Ruby 3.1</a></li>
+</ul>
 
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started <a name="getting-started"></a>
+## Getting Started 
 
-> Install Ruby on your computer
-
-To get a local copy up and running, follow these steps.
+> To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-> A computer with Ruby
+  - <a href="https://www.ruby-lang.org/en/news/2022/11/24/ruby-3-1-3-released/">Ruby 3.1</a>
+  - Rubocop _(for local automated tests)_
+
+### Setup
+
+1. Clone this project on your local machine using the following command on your Git Bash: `https://github.com/Irirwanirira/Catalog-Ruby-project.git`
+
+2. Browse to project directory `cd Catalog-Ruby-project`
+
+3. Run `bundle install` to install the dependencies
 
 
 <!-- AUTHORS -->
@@ -77,6 +84,16 @@ To get a local copy up and running, follow these steps.
 - Twitter: [@twitterhandle](https://twitter.com/samuelmoiwa)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ing-abdulai-samuel-moiwa-726340142/)
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+>   Live demo video
+
+- [Live Demo Video](https://drive.google.com/file/d/10y3xExClyVJTA6OU4jws-bmI-w9KU-Kx/view?usp=share_link)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
