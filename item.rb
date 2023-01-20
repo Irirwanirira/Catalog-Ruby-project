@@ -1,7 +1,7 @@
 require 'date'
 
 class Item
-  attr_accessor :author, :publish_date
+  attr_accessor :author, :publish_date, :archived
   attr_reader :label, :genre
 
   def initialize(author, label, published_date)
@@ -12,8 +12,6 @@ class Item
     @archived = false
     @published_date = published_date
   end
-
-  # private :can_be_archived
 
   def can_be_archived
     diff = Date.today - Date.parse(@published_date)
