@@ -4,7 +4,7 @@ require_relative '../book/book'
 describe Label do
   before :each do
     @label = Label.new('Dark Tower', 'Black')
-    @item = Item.new('Joseph', 'Irirwana', '12-11-2005')
+    @item = Item.new('samuel', 'Irirwana', '12-11-2005')
   end
 
   it 'Should have a title of Dark Tower' do
