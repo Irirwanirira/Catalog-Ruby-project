@@ -5,17 +5,17 @@ require_relative '../game/author'
 require 'json'
 
 def initialize_file
-  File.write('./musicAlbum/data/musics.json', '[]') unless
-  File.exist?('./musicAlbum/data/musics.json')
-  File.zero?('./musicAlbum/data/musics.json') &&
-    File.write('./musicAlbum/data/musics.json', '[]')
+  File.write('./storage/musics.json', '[]') unless
+  File.exist?('./storage/musics.json')
+  File.zero?('./storage/musics.json') &&
+    File.write('./storage/musics.json', '[]')
 end
 
 initialize_file
 
 def read_musics
   musics = []
-  all_musics = File.read('./musicAlbum/data/musics.json')
+  all_musics = File.read('./storage/musics.json')
   JSON.parse(all_musics).each do |music|
     new_author = Author.new(music['Author_first_name'], music['Author_last_name'])
     new_music = MusicAlbum.new(music['on_spotify'], new_author, music['label'], music['publish_date'])
@@ -38,7 +38,7 @@ def save_musics(musics)
       Author_second_name: music.author.last_name
     )
   end
-  File.write('./musicAlbum/data/musics.json', JSON.generate(list).to_s)
+  File.write('./storage/musics.json', JSON.generate(list).to_s)
 end
 
 def save_genres(genres)
@@ -46,5 +46,5 @@ def save_genres(genres)
   genres.each do |genre|
     types.push(genre: genre.genre.name)
   end
-  File.write('./musicAlbum/data/genre.json', JSON.generate(types).to_s)
+  File.write('./storage/genre.json', JSON.generate(types).to_s)
 end
