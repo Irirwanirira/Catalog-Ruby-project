@@ -8,8 +8,8 @@ describe Item do
     @label = Label.new('Dark Tower', 'Black')
     @author = Author.new('Sajeel', 'Zafar')
     @genres = Genre.new('pop')
-    @item = Item.new('Joseph', 'Irirwana', '12-11-2005')
-    @item2 = Item.new('Joseph', 'Irirwana', '12-11-2021')
+    @item = Item.new('samuel', 'Irirwana', '12-11-2005')
+    @item2 = Item.new('samuel', 'Irirwana', '12-11-2021')
   end
 
   it 'Should have can be archived to be true' do
